@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::ArgEnum;
 
+pub mod basic; // this is taken from src/basic.rs
 use crate::basic::basic_fn;
+use crate::basic::array_fn;
 
 
 // A collection of resources while learning rust
@@ -25,16 +27,18 @@ enum ExampleKind {
     // basic examples in rust
     #[default]
     BasicExamples,
+    // Related to arrays and loops
+    Array,
     // functions in rust
     Functions,
 }
 
-pub mod basic; // this is taken from src/basic.rs
 fn main() {
     let args = Arguments::parse();
     //println!("{:?}", args);
     match args.example_type{
         ExampleKind::BasicExamples => basic_fn(),
+        ExampleKind::Array => array_fn(),
         ExampleKind::Functions => println!("not implemented yet"),
     };
 }
