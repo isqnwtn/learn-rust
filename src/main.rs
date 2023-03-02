@@ -6,9 +6,13 @@ use clap::Parser;
 use clap::ArgEnum;
 
 pub mod basic; // this is taken from src/basic.rs
+pub mod lifetime;
+
 use crate::basic::basic_fn;
 use crate::basic::array_fn;
 use crate::basic::string_fn;
+
+use crate::lifetime::lifetime_fn;
 
 
 // A collection of resources while learning rust
@@ -28,6 +32,7 @@ enum ExampleKind {
     #[default]
     BasicExamples,
     Array,String,Functions,
+    Lifetime,
 }
 
 fn main() {
@@ -38,5 +43,6 @@ fn main() {
         ExampleKind::Array => array_fn(),
         ExampleKind::String => string_fn(),
         ExampleKind::Functions => println!("not implemented yet"),
+        ExampleKind::Lifetime => lifetime_fn(),
     };
 }
