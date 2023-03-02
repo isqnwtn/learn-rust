@@ -8,6 +8,7 @@ use clap::ArgEnum;
 pub mod basic; // this is taken from src/basic.rs
 use crate::basic::basic_fn;
 use crate::basic::array_fn;
+use crate::basic::string_fn;
 
 
 // A collection of resources while learning rust
@@ -24,13 +25,9 @@ struct Arguments {
 
 #[derive(ArgEnum, Clone, Debug, Default)]
 enum ExampleKind {
-    // basic examples in rust
     #[default]
     BasicExamples,
-    // Related to arrays and loops
-    Array,
-    // functions in rust
-    Functions,
+    Array,String,Functions,
 }
 
 fn main() {
@@ -39,6 +36,7 @@ fn main() {
     match args.example_type{
         ExampleKind::BasicExamples => basic_fn(),
         ExampleKind::Array => array_fn(),
+        ExampleKind::String => string_fn(),
         ExampleKind::Functions => println!("not implemented yet"),
     };
 }
