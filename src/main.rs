@@ -7,12 +7,15 @@ use clap::ArgEnum;
 
 pub mod basic; // this is taken from src/basic.rs
 pub mod lifetime;
+pub mod smart;
 
 use crate::basic::basic_fn;
 use crate::basic::array_fn;
 use crate::basic::string_fn;
 
 use crate::lifetime::lifetime_fn;
+
+use crate::smart::smart_ptr;
 
 
 // A collection of resources while learning rust
@@ -33,6 +36,7 @@ enum ExampleKind {
     BasicExamples,
     Array,String,Functions,
     Lifetime,
+    SmartPtr,
 }
 
 fn main() {
@@ -44,5 +48,6 @@ fn main() {
         ExampleKind::String => string_fn(),
         ExampleKind::Functions => println!("not implemented yet"),
         ExampleKind::Lifetime => lifetime_fn(),
+        ExampleKind::SmartPtr => smart_ptr(),
     };
 }
