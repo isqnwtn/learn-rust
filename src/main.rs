@@ -8,6 +8,7 @@ use clap::ArgEnum;
 pub mod basic; // this is taken from src/basic.rs
 pub mod lifetime;
 pub mod smart;
+pub mod macro_mod; // this refers to macro_mod/mod.rs as ther's no macro_mod.rs in src/
 
 use crate::basic::basic_fn;
 use crate::basic::array_fn;
@@ -16,6 +17,9 @@ use crate::basic::string_fn;
 use crate::lifetime::lifetime_fn;
 
 use crate::smart::smart_ptr;
+
+use crate::macro_mod::macro_all_fun;
+
 
 
 // A collection of resources while learning rust
