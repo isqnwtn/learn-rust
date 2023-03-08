@@ -41,6 +41,7 @@ enum ExampleKind {
     Array,String,Functions,
     Lifetime,
     SmartPtr,
+    Macros,
 }
 
 fn main() {
@@ -53,5 +54,6 @@ fn main() {
         ExampleKind::Functions => println!("not implemented yet"),
         ExampleKind::Lifetime => lifetime_fn(),
         ExampleKind::SmartPtr => smart_ptr(),
+        ExampleKind::Macros => macro_all_fun(),
     };
 }
