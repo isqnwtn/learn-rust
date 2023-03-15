@@ -3,7 +3,7 @@ use std::io::Write;
 
 mod string;
 mod array;
-pub use self::string::string_fn;
+pub use self::string::string_fn; // rexporting the modules in the same folder
 pub use self::array::array_fn;
 
 pub fn basic_fn(){
