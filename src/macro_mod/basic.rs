@@ -1,3 +1,4 @@
+// the following are examples for declerative macros
 // macro_export means that this macro should be used
 // whenever the crate is called
 #[macro_export]

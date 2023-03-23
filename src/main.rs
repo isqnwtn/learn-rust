@@ -13,6 +13,7 @@ pub mod macro_mod; // this refers to macro_mod/mod.rs as ther's no macro_mod.rs 
 use crate::basic::basic_fn;
 use crate::basic::array_fn;
 use crate::basic::string_fn;
+use crate::basic::trait_fn;
 
 use crate::lifetime::lifetime_fn;
 
@@ -38,7 +39,7 @@ struct Arguments {
 enum ExampleKind {
     #[default]
     BasicExamples,
-    Array,String,Functions,
+    Array,String,Functions,Traits,
     Lifetime,
     SmartPtr,
     Macros,
@@ -51,6 +52,7 @@ fn main() {
         ExampleKind::BasicExamples => basic_fn(),
         ExampleKind::Array => array_fn(),
         ExampleKind::String => string_fn(),
+        ExampleKind::Traits => trait_fn(),
         ExampleKind::Functions => println!("not implemented yet"),
         ExampleKind::Lifetime => lifetime_fn(),
         ExampleKind::SmartPtr => smart_ptr(),

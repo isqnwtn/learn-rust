@@ -3,8 +3,10 @@ use std::io::Write;
 
 mod string;
 mod array;
+mod traits;
 pub use self::string::string_fn; // rexporting the modules in the same folder
 pub use self::array::array_fn;
+pub use self::traits::trait_fn;
 
 pub fn basic_fn(){
     println!("Hello and welcome to Rust basic stuff..");
